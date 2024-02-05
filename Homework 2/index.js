@@ -11,3 +11,7 @@ let yearNow = 2024;
 let dateOfBirth = (yearNow - age);
 alert(dateOfBirth);
 
+
+let celsius = +prompt("Вкажіть температуру в цельсіях");
+let fahrenheit = ((celsius * 9) / 5) + 32;
+alert(fahrenheit);
