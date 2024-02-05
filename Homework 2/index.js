@@ -15,3 +15,9 @@ alert(dateOfBirth);
 let celsius = +prompt("Вкажіть температуру в цельсіях");
 let fahrenheit = ((celsius * 9) / 5) + 32;
 alert(fahrenheit);
+
+
+let num1 = +prompt("Напишіть число яке хочите поділити");
+let num2 = +prompt("Вкажіть на скільки хочите поділити");
+let division = Math.floor(num1 / num2);
+alert(division);
