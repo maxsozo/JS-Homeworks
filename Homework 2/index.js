@@ -23,8 +23,18 @@
 // alert(division);
 
 
-const eur = 41;
-let grn = +prompt("Скільки ви хочите обміняти з гивні на євро?");
-let division = grn / eur;
-division = division.toFixed(2);
-alert(division);
+// const eur = 41;
+// let grn = +prompt("Скільки ви хочите обміняти з гивні на євро?");
+// let division = grn / eur;
+// division = division.toFixed(2);
+// alert(division);
+
+
+const red = parseInt(prompt("Введіть значення для червоного кольору (0-255):"));
+const green = parseInt(prompt("Введіть значення для зеленого кольору (0-255):"));
+const blue = parseInt(prompt("Введіть значення для синього кольору (0-255):"));
+
+let element = document.getElementById("bg"); 
+
+element.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+
