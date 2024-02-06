@@ -30,11 +30,20 @@
 // alert(division);
 
 
-const red = parseInt(prompt("Введіть значення для червоного кольору (0-255):"));
-const green = parseInt(prompt("Введіть значення для зеленого кольору (0-255):"));
-const blue = parseInt(prompt("Введіть значення для синього кольору (0-255):"));
+// const red = parseInt(prompt("Введіть значення для червоного кольору (0-255):"));
+// const green = parseInt(prompt("Введіть значення для зеленого кольору (0-255):"));
+// const blue = parseInt(prompt("Введіть значення для синього кольору (0-255):"));
 
-let element = document.getElementById("bg"); 
+// let element = document.getElementById("bg"); 
 
-element.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+// element.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
 
+
+let floors = +prompt("Введіть кількість поверхів в будинку");
+let apartmentOnFloor = +prompt("Введіть кількість квартир на поврсі");
+let numApartment = +prompt("Введіть номер квартири");
+
+let numEntrance = Math.ceil( numApartment / (floors * apartmentOnFloor));
+let numFloor = Math.ceil(( numApartment % (floors * apartmentOnFloor)) / apartmentOnFloor);
+
+alert('Квартира ' + numApartment + ' знаходится в ' + numEntrance + "-му під'їзді на " + numFloor + '-му поверсі');
