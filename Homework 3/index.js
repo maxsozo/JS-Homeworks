@@ -22,3 +22,14 @@
     str = str.split(' ');
     alert(str.length);
 }
+
+{
+    let name = prompt("Введіть ім'я").trim();
+    let lastName = prompt('Введіть своє прізвище').trim();
+    let fatherName = prompt("Введіть і'мя по батьковi").trim();
+    name = name[0].toUpperCase() + name.slice(1).toLowerCase();
+    lastName = lastName[0].toUpperCase() + lastName.slice(1).toLowerCase();
+    fatherName = fatherName[0].toUpperCase() + fatherName.slice(1).toLowerCase();
+    let fullName = lastName + ' ' + name + ' ' + fatherName;
+    alert(fullName);
+}
