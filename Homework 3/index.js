@@ -68,3 +68,9 @@
     result = str.slice(0, startWith) + newTag + str.slice(endWith);
     console.log(result)
 }
+
+{
+    let str = prompt('Введіть текст якщо захочите що б текст був з нового рядка напишіть \\n');
+    let newLine = str.split('\\n').join('\n');
+    console.log(newLine);
+}
