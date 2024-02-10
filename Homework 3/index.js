@@ -56,3 +56,15 @@
     result = str.slice( 0, startWith) + str.slice(endWith);
     console.log(result);
 }
+
+{
+    let str = "якийсь текст у якому є один тег <br /> і всяке інше"
+    let result;
+    let startWith = str.indexOf("<");
+    let endWith = str.indexOf(">", startWith) + 1;
+
+    let newTag = str.slice(startWith, endWith).toUpperCase();
+    
+    result = str.slice(0, startWith) + newTag + str.slice(endWith);
+    console.log(result)
+}
