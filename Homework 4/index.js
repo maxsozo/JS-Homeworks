@@ -95,3 +95,12 @@
         alert("Ваш вік: " + userAge);
     }
 }
+
+{
+    let question = confirm('шопінг?');
+    if (!question || question === '') {
+        alert('ти - бяка');
+    } else {
+        alert('ПОООГНАЛИ!!!');
+    }
+}
