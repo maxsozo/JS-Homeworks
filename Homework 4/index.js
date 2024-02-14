@@ -114,3 +114,23 @@
         alert ('ПОООГНАЛИ!!!');
     }
 }
+
+{
+    let login = 'admin';
+    let password = 'qwerty';
+    let userLogin = prompt('Введіть логін');
+    let userPassword
+    if(login === userLogin) {
+        userPassword = prompt('Введіть пароль');        
+    }
+    else{
+        alert('логін не вірний');
+    }
+
+    if(password === userPassword) {
+        alert('Ласкаво просимо');
+    }
+    else{
+        alert('пароль не вірний')
+    }
+}
