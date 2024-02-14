@@ -104,3 +104,13 @@
         alert('ПОООГНАЛИ!!!');
     }
 }
+
+{
+    let question = confirm('шопінг?');
+    if (question === false) {
+        alert('ти - бяка');
+    } 
+    else {
+        alert ('ПОООГНАЛИ!!!');
+    }
+}
