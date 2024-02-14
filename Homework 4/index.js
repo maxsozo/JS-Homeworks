@@ -25,3 +25,12 @@
         alert('Молодець!')
     }
 }
+
+{
+    let answer1 = confirm('Ви любите собак?');
+    let answer2 = confirm('Ви любите пиво?');
+    let answer3 = confirm('Ви любите сопрт?');
+    alert ('Ваша відповідь: ' + answer1);
+    alert ('Ваша відповідь: ' + answer2);
+    alert ('Ваша відповідь: ' + answer3);
+}
