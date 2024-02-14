@@ -16,8 +16,8 @@
 }
 
 {
-    let UserText = prompt('Напишіть щось на рахунок політики');
-    let wordCheck = UserText.includes('Я за рашку');
+    let userText = prompt('Напишіть щось на рахунок політики');
+    let wordCheck = userText.includes('Я за рашку');
     if (wordCheck === true) { 
         alert('ти сепор! На мило тебе!!!');
     }
@@ -33,4 +33,14 @@
     alert ('Ваша відповідь: ' + answer1);
     alert ('Ваша відповідь: ' + answer2);
     alert ('Ваша відповідь: ' + answer3);
+}
+
+{
+    let userSex = confirm('Ви чоловік чи жінкка? \nЯкщо чоловік то нажміть Ок, якщо жінка нажміть скасувати');
+    if (userSex === true) {
+        alert('Ви чоловік');
+    }
+    else {
+        alert('Ви жінка');
+    }
 }
