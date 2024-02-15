@@ -134,3 +134,44 @@
         alert('пароль не вірний')
     }
 }
+
+{
+    const rateEur = 41;
+    const rateGrn = 0.025;
+    let enterRate = prompt('вкажіть валюту яку хочите обміняти GRN чи EUR?').toLowerCase();
+    let questionRate;
+    let sum;
+    if(enterRate === 'eur') {
+        questionRate = confirm('Купити чи продати?\nЯкщо хочите купити нажміть відміна а якщо продати то ОК');
+        sum = +prompt('скільки хочите продати? чи купити?');
+        if(questionRate === true) {
+            let receivedSum  = sum * rateEur;
+            alert(`тепер у вас: ${receivedSum} гривень`);
+        }
+        else if(questionRate === false) {
+           let receivedSum = sum / rateEur;
+           alert(`тепер у вас: ${receivedSum} євро`);
+        }
+        else {
+            alert('ви ввели якусь білеберду');
+        }
+    }
+    else if(enterRate === 'grn') {
+        questionRate = confirm('Купити чи продати?\nЯкщо хочите купити нажміть відміна а якщо продати то ОК');
+        sum = +prompt('скільки хочите продати? чи купити?');
+        if(questionRate === true) {
+            let receivedSum = sum * rateGrn;
+            alert(`тупер у вас: ${receivedSum} гривень`);
+        }
+        else if(questionRate === false) {
+            let receivedSum = sum / rateGrn;
+            alert(`тепер у вас: ${receivedSum} євро`);
+        }
+        else {
+            alert('ви ввели якусь білеберду')
+        }
+    }
+    else {
+        alert('ви ввели якусь білеберду')
+    }
+}
