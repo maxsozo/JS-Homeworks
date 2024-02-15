@@ -175,3 +175,13 @@
         alert('ви ввели якусь білеберду')
     }
 }
+
+{
+    let firstName = prompt("Введіть ім'я:") || 'Анонім';
+    let lastName = prompt('Введіть прізвище:') || 'Анонімовний';
+    let middleName = prompt('Введіть по батькові:') || 'Анонімович';
+
+    console.log("Ім'я:", firstName);
+    console.log('Прізвище:', lastName);
+    console.log('По батькові:', middleName);
+}
