@@ -88,11 +88,14 @@
 }
 
 {
-    let userAge = prompt("Введіть свій вік:");
-    if (!userAge || userAge.trim() === "") {
-        alert("Помилка: Ви не ввели вік або натиснули скасування.");
+    let age = +prompt("Вкажіть ваш вік") || 'Ви не вказали вік';
+    let yearNow = 2024;
+
+    if (age) {
+        let dateOfBirth = yearNow - age;
+        alert(dateOfBirth);
     } else {
-        alert("Ваш вік: " + userAge);
+        alert('Ви не вказали вік або скасували введення');
     }
 }
 
@@ -230,4 +233,8 @@
     } else {
         alert("Будь ласка, введіть правильний варіант: камінь, ножиці або папір");
     }
+}
+
+{
+
 }
