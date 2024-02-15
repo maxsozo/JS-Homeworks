@@ -116,6 +116,37 @@
 }
 
 {
+    let firstName = prompt("Введіть ім'я:") || 'Анонім';
+    let lastName = prompt('Введіть прізвище:') || 'Анонімовний';
+    let middleName = prompt('Введіть по батькові:') || 'Анонімович';
+
+    console.log("Ім'я:", firstName);
+    console.log('Прізвище:', lastName);
+    console.log('По батькові:', middleName);
+}
+
+{
+    let firstName = prompt("Введіть ім'я:");
+    if (!firstName) {
+    firstName = 'Анонім';
+    }
+
+    let lastName = prompt("Введіть прізвище:");
+    if (!lastName) {
+    lastName = 'Анонімовний';
+    }
+
+    let middleName = prompt("Введіть по батькові:");
+    if (!middleName) {
+    middleName = 'Анонімович';
+    }
+
+    console.log("Ім'я:", firstName);
+    console.log("Прізвище:", lastName);
+    console.log("По батькові:", middleName);
+}
+
+{
     let login = 'admin';
     let password = 'qwerty';
     let userLogin = prompt('Введіть логін');
@@ -176,12 +207,3 @@
     }
 }
 
-{
-    let firstName = prompt("Введіть ім'я:") || 'Анонім';
-    let lastName = prompt('Введіть прізвище:') || 'Анонімовний';
-    let middleName = prompt('Введіть по батькові:') || 'Анонімович';
-
-    console.log("Ім'я:", firstName);
-    console.log('Прізвище:', lastName);
-    console.log('По батькові:', middleName);
-}
