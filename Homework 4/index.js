@@ -207,3 +207,27 @@
     }
 }
 
+{
+    let userChoice = prompt("Введіть: камінь, ножиці чи папір").toLowerCase();
+
+    if (userChoice === "камінь" || userChoice === "ножиці" || userChoice === "папір") {
+
+    let computerChoice = ["камінь", "ножиці", "папір"][Math.floor(Math.random() * 3)];
+    
+    alert("Ви вибрали: " + userChoice + "\nКомп'ютер вибрав: " + computerChoice);
+
+    if (userChoice === computerChoice) {
+            alert("Нічия!");
+    } else if (
+        (userChoice === "камінь" && computerChoice === "ножиці") ||
+        (userChoice === "ножиці" && computerChoice === "папір") ||
+        (userChoice === "папір" && computerChoice === "камінь")
+    ) {
+        alert("Ви перемогли!");
+    } else {
+        alert("Комп'ютер переміг!");
+    }
+    } else {
+        alert("Будь ласка, введіть правильний варіант: камінь, ножиці або папір");
+    }
+}
