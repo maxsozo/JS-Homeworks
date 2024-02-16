@@ -58,3 +58,16 @@
         console.log(check);
     }
 }
+
+{
+    let arr = [prompt('Введіть що небуть'), prompt('Введіть що небуть'), 
+    prompt('Введіть що небуть'), prompt('Введіть що небуть'), prompt('Введіть що небуть'),]
+    let arrReverse = [];
+    let a = arr.pop();
+    let b = arr.pop()
+    let c = arr.pop()
+    let d = arr.pop()
+    let f = arr.pop()
+    arrReverse.push(a, b, c, d, f);
+    console.log(arrReverse);
+}
