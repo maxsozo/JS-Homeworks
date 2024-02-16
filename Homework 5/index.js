@@ -46,3 +46,15 @@
     let withoutZero = multiTable.slice(0 [0]); 
     console.log(withoutZero[2][2])
 }
+
+{
+    let arr = ['Маша', 'Петя', 'Іван', 'Вася', 'Настя'];
+    let userWord = prompt('Введіть слово яке хочите найти в масиві');
+    let check = arr.indexOf(userWord);
+    if(check === -1) {
+        console.log('Пошук не приніс результатів такого слова в масиві немє');
+    }
+    else {
+        console.log(check);
+    }
+}
