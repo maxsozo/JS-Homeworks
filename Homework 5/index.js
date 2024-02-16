@@ -71,3 +71,16 @@
     arrReverse.push(a, b, c, d, f);
     console.log(arrReverse);
 }
+
+{
+    let arr = [prompt('Введіть що небуть'), prompt('Введіть що небуть'), 
+    prompt('Введіть що небуть'), prompt('Введіть що небуть'), prompt('Введіть що небуть'),]
+    let arrReverse = [];
+    let a = arr.shift();
+    let b = arr.shift()
+    let c = arr.shift()
+    let d = arr.shift()
+    let f = arr.shift()
+    arrReverse.unshift(f, d, c, b, a);
+    console.log(arrReverse);
+}
