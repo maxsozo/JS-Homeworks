@@ -128,3 +128,10 @@
     console.log(copyArr);
     console.log("Довжина масиву:", copyArr.length);    
 }
+
+{
+    let userText = prompt('Введіть буть що');
+    userText.split('');
+    let [a, b, c, d, e, f, g, h, i] = userText;
+    console.log(e, i);
+}
