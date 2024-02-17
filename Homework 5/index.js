@@ -115,3 +115,16 @@
         console.log('Масиви рівні між собою');
     }
 }
+
+{
+    const multiTable = [[[0], [0], [0], [0], [0]],
+                        [[1], [2], [3], [4], [5]], 
+                        [[2], [4], [6], [8], [10]], 
+                        [[3], [6], [9], [12], [15]], 
+                        [[4], [8], [12], [16], [20]], 
+                        [[5], [10], [15], [20], [25]]];
+    let copyArr = [...multiTable[1], ...multiTable[2], ...multiTable[3], ...multiTable[4], ...multiTable[5]];
+
+    console.log(copyArr);
+    console.log("Довжина масиву:", copyArr.length);    
+}
