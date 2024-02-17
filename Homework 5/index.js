@@ -107,3 +107,11 @@
     let deepCopyArray = JSON.parse(JSON.stringify(multiTable)); // не маю поняття як по інакшому зробити ГЛИБОКЕ копіювання тому використав JSON я його вже вивчав раніше.
     console.log(deepCopyArray[2][2]);
 }
+
+{
+    let arr1 = [];
+    let arr2 = arr1;
+    if(arr1 === arr2){
+        console.log('Масиви рівні між собою');
+    }
+}
