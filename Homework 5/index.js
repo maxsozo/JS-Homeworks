@@ -146,3 +146,15 @@
         alert(name);
     }
 }
+
+{
+    const currencies = ["USD", "EUR", "GBP", "UAH"];
+    let str = "<select>";
+
+    for (const currency of currencies) {
+        str += `<option value="${currency}">${currency}</option>`;
+    }
+
+    str += "</select>";
+    document.write(str);
+}
