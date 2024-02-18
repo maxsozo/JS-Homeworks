@@ -158,3 +158,14 @@
     str += "</select>";
     document.write(str);
 }
+
+{
+    const names = ["John", "Paul", "George", "Ringo"];
+    let str = "<table>";
+
+    for (const name of names) {
+    str += "<td>" + name + "</td>";
+    }
+    str += "</table>";
+    document.write(str);
+}
