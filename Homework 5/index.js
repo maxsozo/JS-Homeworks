@@ -135,3 +135,14 @@
     let [a, b, c, d, e, f, g, h, i] = userText;
     console.log(e, i);
 }
+
+{
+    
+}
+
+{
+    let namesArr =  ["John", "Paul", "George", "Ringo"];
+    for (let name of namesArr){
+        alert(name);
+    }
+}
