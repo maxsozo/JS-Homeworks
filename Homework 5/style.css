@@ -1,0 +1,12 @@
+td {
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.even {
+    background-color: rgb(47, 227, 47);
+}
+
+.odd {
+    background-color: rgb(228, 31, 31);
+}
