@@ -220,3 +220,17 @@
     str += "</table>";
     document.write(str);
 }
+
+{
+    const capitalize = str => {
+        let result
+        let words = str.split(' ');
+        for (let i = 0; i < words.length; i++){
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
+        }
+
+        result = words.join(' ');
+        return result
+   }
+   console.log(capitalize("cANBerRa")) //Canberra
+}
