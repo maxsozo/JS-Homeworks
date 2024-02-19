@@ -251,3 +251,18 @@
    let capitalizeMap = userTextArray.map(word => capitalize(word))
    console.log(capitalizeMap);
 }
+
+{
+    const filterWords = (inputString, disallowedWords) => {
+        let wordsArray = inputString.split(' ');
+        let filteredWords = wordsArray.filter(word => !disallowedWords.includes(word.toLowerCase()));
+        let resultString = filteredWords.join(' ');
+    
+        return resultString;
+    }
+    let userText = prompt('Введіть якийсь текст, розповідь');
+    let badWords = ['блін', 'вафледрон', 'чурка', 'пітух', 'чорножопий'];
+    let result = filterWords(userText, badWords);
+    console.log(result);
+
+}
