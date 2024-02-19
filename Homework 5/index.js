@@ -234,3 +234,20 @@
    }
    console.log(capitalize("cANBerRa")) //Canberra
 }
+
+{
+    let userText = prompt('Введіть пару слів');
+    const capitalize = str => {
+        let result
+        let words = str.split(' ');
+        for (let i = 0; i < words.length; i++){
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
+        }
+
+        result = words.join(' ');
+        return result
+   }
+   let userTextArray = userText.split(' ');
+   let capitalizeMap = userTextArray.map(word => capitalize(word))
+   console.log(capitalizeMap);
+}
