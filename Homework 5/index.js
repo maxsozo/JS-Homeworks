@@ -195,3 +195,28 @@
     str += "</table>";
     document.write(str);
 }
+
+{
+    const multiTable = [[[0], [0], [0], [0], [0], [0]],
+                        [[0], [1], [2], [3], [4], [5]], 
+                        [[0], [2], [4], [6], [8], [10]], 
+                        [[0], [3], [6], [9], [12], [15]], 
+                        [[0], [4], [8], [12], [16], [20]], 
+                        [[0], [5], [10], [15], [20], [25]]];
+                        
+    let str = "<table>";
+    for (const array of multiTable) {
+        str += "<tr>";
+
+        for (const cell of array) {
+            let number = cell[0];
+            let isEven = number % 2 === 0;
+            let cellClass = isEven ? 'even' : 'odd';
+            str += `<td class='${cellClass}'>${number}</td>`;
+        }
+        str += "</tr>";
+    }
+                    
+    str += "</table>";
+    document.write(str);
+}
