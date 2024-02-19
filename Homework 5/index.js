@@ -266,3 +266,17 @@
     console.log(result);
 
 }
+
+{
+    const censorWords = (inputString, forbiddenWords) => {
+        let wordsArray = inputString.split(' ');
+        let censoredWords = wordsArray.map(word => forbiddenWords.includes(word.toLowerCase()) ? 'BEEP' : word);
+        let resultString = censoredWords.join(' ');
+    
+        return resultString;
+    }
+    let userText = prompt('Введіть якийсь текст, розповідь');
+    let badWords = ['блін', 'вафледрон', 'чурка', 'пітух', 'чорножопий'];
+    let result = censorWords(userText, badWords);
+    console.log(result);
+}
