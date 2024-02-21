@@ -135,3 +135,10 @@
     console.log(even1, even2);
     console.log(literals);
 }
+
+{
+    let arr = [1, "abc"]
+    let [number, [s1, s2, s3]] = arr
+    console.log(number);
+    console.log(s1, s2, s3);
+}
