@@ -77,7 +77,7 @@
                                 id: "surname"
                             }
                     }
-                ],
+                ]
             },
             {
                 tagName: "div",
@@ -104,4 +104,18 @@
 
     console.log(body.children[1].children[1].children[0]);
     console.log(body.children[0].children[3].attrs.id);
+
+    body.children[0].parent = body;
+    body.children[1].parent = body;
+    body.children[0].children[0].parent = body.children[0];
+    body.children[0].children[1].parent = body.children[0];
+    body.children[0].children[2].parent = body.children[0];
+    body.children[0].children[3].parent = body.children[0];
+    body.children[0].children[2].attrs.parent = body.children[0].children[2];
+    body.children[0].children[3].attrs.parent = body.children[0].children[3];
+
+    body.children[1].children[0].parent = body.children[1];
+    body.children[1].children[1].parent = body.children[1];
+    body.children[1].children[0].attrs.parent = body.children[1].children[0];
+    body.children[1].children[1].attrs.parent = body.children[1].children[1]; 
 }
