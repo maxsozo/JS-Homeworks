@@ -47,6 +47,7 @@
 }
 
 {
+    let userKey = prompt("Введіть новий атрибут")
     let body = {
         tagName: "body",
         children: [
@@ -86,7 +87,8 @@
                         tagName: "button",
                         children: ["Ok"],
                         attrs:{
-                                id: "ok"
+                                id: "ok",
+                                userKey: prompt("Введіть значення атрибута")
                             }
                     },
 
