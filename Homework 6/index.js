@@ -142,3 +142,11 @@
     console.log(number);
     console.log(s1, s2, s3);
 }
+
+{
+    let arr = [1,2,3,4, 5,6,7,10];
+    let[a, b, ...rest] = arr
+    let length = arr.length;
+    console.log(a, b);
+    console.log(length);
+}
