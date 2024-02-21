@@ -26,7 +26,8 @@
         volume: 0.5,
         producingCountry: "Ukraine",
         prise: 32.40,
-        userKey1: prompt("Введіть значення")
+        userKey1: prompt("Введіть значення"),
+         
     }
 
     let copybook = {
@@ -37,4 +38,10 @@
     }  
     console.log(beer.userKey1);
     console.log(copybook.userKey2);
+
+    let quantity = prompt("Введіть кількість пляшок пива");
+    let crate = {
+        inside: beer,
+        quantityBottles: quantity 
+    }
 }
