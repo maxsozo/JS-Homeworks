@@ -45,3 +45,63 @@
         quantityBottles: quantity 
     }
 }
+
+{
+    let body = {
+        tagName: "body",
+        children: [
+            {
+                tagName: "div",
+                children: [
+                    {
+                        tagName: "span",
+                        children: ["Enter a data please:"]
+                    },
+
+                    {
+                        tagName: "br/"
+                    },
+
+                    {
+                        tagName: "input",
+                        attrs:{
+                                type: "text",
+                                id: "name"
+                            }
+                    },
+
+                    {
+                        tagName: "input",
+                        attrs:{
+                                type: "text",
+                                id: "surname"
+                            }
+                    }
+                ],
+            },
+            {
+                tagName: "div",
+                children: [
+                    {
+                        tagName: "button",
+                        children: ["Ok"],
+                        attrs:{
+                                id: "ok"
+                            }
+                    },
+
+                    {
+                        tagName: "button",
+                        children: ["Cancel"],
+                        attrs: {
+                            id: "cancel"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+    console.log(body.children[1].children[1].children[0]);
+    console.log(body.children[0].children[3].attrs.id);
+}
