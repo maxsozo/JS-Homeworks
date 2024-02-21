@@ -56,7 +56,7 @@
                 children: [
                     {
                         tagName: "span",
-                        children: ["Enter a data please:"]
+                        childrenSpan: ["Enter a data please:"]
                     },
 
                     {
@@ -119,5 +119,11 @@
     body.children[1].children[0].parent = body.children[1];
     body.children[1].children[1].parent = body.children[1];
     body.children[1].children[0].attrs.parent = body.children[1].children[0];
-    body.children[1].children[1].attrs.parent = body.children[1].children[1]; 
+    body.children[1].children[1].attrs.parent = body.children[1].children[1];
+    
+    let {children: [{children: [{ childrenSpan: childrenSpanArray }, , , { attrs: { id } }]}, {children: [{ children: childrenArray }, {}]}]} = body;
+    
+    console.log(childrenSpanArray);
+    console.log(childrenArray);
+    console.log(id);
 }
