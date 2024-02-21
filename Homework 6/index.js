@@ -127,3 +127,11 @@
     console.log(childrenArray);
     console.log(id);
 }
+
+{
+    let arr = [1,2,3,4,5, "a", "b", "c"];
+    let [odd1, even1, odd2, even2, odd3, ...literals] = arr
+    console.log(odd1, odd2, odd3);
+    console.log(even1, even2);
+    console.log(literals);
+}
