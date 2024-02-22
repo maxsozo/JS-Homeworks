@@ -213,3 +213,23 @@
        }
     })
 }
+
+{
+    fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+    .then(data => {
+       //ця функція запускається коли дані завантажуються.
+       //Інший код працює РАНIШЕ.
+       //тільки тут є змінна data з завантаженими даними
+       console.log(data) // Вивчіть структуру, що отримується з сервера в консолі
+       
+       let str = "<select>";
+       let currencies = Object.keys(data.rates);
+        for(currency of currencies){
+            str += `<option value="${currency}">${currency}</option>`;
+        }
+       str += "</select>";
+       document.write(str);
+
+    })
+        
+}
