@@ -26,7 +26,7 @@
         volume: 0.5,
         producingCountry: "Ukraine",
         prise: 32.40,
-        userKey1: prompt("Введіть значення"),
+        userKey1: prompt("Введіть значення")
          
     }
 
@@ -149,4 +149,20 @@
     let length = arr.length;
     console.log(a, b);
     console.log(length);
+}
+
+{
+    let userKey1 = prompt("Введіть новий ключ");
+    let beer = {
+        name: "Опілля",
+        type: "Корифей",
+        alcoholContent: 4.2,
+        volume: 0.5,
+        producingCountry: "Ukraine",
+        prise: 32.40,
+        [userKey1]: prompt("Введіть значення")  
+    }
+    let {[userKey1]: value, ...newBeer} = beer;
+    console.log(beer);
+    console.log(newBeer); 
 }
