@@ -166,3 +166,50 @@
     console.log(beer);
     console.log(newBeer); 
 }
+
+{
+    fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+    .then(data => {
+           //ця функція запускається коли дані завантажуються.
+           //Інший код працює РАНIШЕ.
+           //тільки тут є змінна data з завантаженими даними
+           console.log(data) // Вивчіть структуру, що отримується з сервера в консолі
+
+        const userPrompt = prompt('Введіть курс валюти яку бажаєте обміняти');
+        if(userPrompt === null) {
+            alert('Ви скасували операцію');
+        }    
+        let userInputRate = userPrompt.toUpperCase();
+        const findRate = data.rates[userInputRate];
+
+        if (!findRate) {
+        alert('Ви не ввели нічого або ввели якусь діч');
+       }
+       else {
+        const userPromptConversion = prompt('Введіть валюту на яку бажаєте обміняти');
+        if(userPromptConversion === null) {
+            alert('Ви скасували операцію');
+        }
+        let userInputConversion = userPromptConversion.toUpperCase();
+        const findRateToConversion = data.rates[userInputConversion];
+        if(!findRateToConversion) {
+            alert('Ви не ввели нічого або ввели якусь діч');
+        }
+        else {
+            const sum = prompt('Введіть суму');
+            if(isNaN(sum) || !sum) {
+                alert('Ви ввели якусь дичину або нічого не ввели');
+            }
+            else if(findRate > findRateToConversion) {
+                alert((sum / findRate).toFixed(2))
+            }
+            else if(findRate < findRateToConversion) {
+                alert((sum * findRateToConversion).toFixed(2))
+            }
+            else {
+                alert(sum)
+            }
+        }
+       }
+    })
+}
