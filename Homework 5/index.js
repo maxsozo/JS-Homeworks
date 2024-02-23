@@ -187,7 +187,7 @@
     for (const currency of currencies) {
         str += "<tr>";
         for (const letter of currency) {
-            str += "<td>" + letter + "</td>";
+            str += "<tr>" + letter + "</tr>";
         }
         str += "</tr>";
     }
