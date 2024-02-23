@@ -270,3 +270,24 @@
     })
 
 }
+
+{
+    const car = {
+        "Name":"chevrolet chevelle malibu",
+        "Cylinders":8,
+        "Displacement":307,
+        "Horsepower":130,
+        "Weight_in_lbs":3504,
+        "Origin":"USA",
+        "in_production": false
+  }
+
+    let str = "<form>";
+  
+    for(const keys in car){
+        str += `<label> ${keys}: <input type="${(typeof car[keys] === 'number') ? 'number' : (typeof car[keys] === 'string') ? 'text' : 'checkbox' }" value="${car[keys]}"/></label>`
+    }
+
+    str += "</form>";
+    document.write(str);
+}
