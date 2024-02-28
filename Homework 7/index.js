@@ -47,3 +47,11 @@
     }
     console.log(correctNames());
 }
+
+{
+    function newLineString(str) {
+        let newLine = str.split('\\n').join('\n');
+        return newLine
+    }
+    console.log(newLineString('hello my name is \nMaks\n;)'))
+}
