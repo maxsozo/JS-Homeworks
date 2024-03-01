@@ -106,3 +106,17 @@
                         [[0], [5], [10], [15], [20], [25]]];
     tableArr(multiTable);
 }
+
+{   
+    let userText = prompt('Введіть якийсь текст, розповідь');
+    let badWords = ['бляха', 'муха', "пляшка", "шабля"];
+    function checkBadWords(str, arrBadWords) {
+        let wordsArray = str.split(' ');
+        let filteredWords = wordsArray.filter(word => !arrBadWords.includes(word.toLowerCase()));
+        let resultString = filteredWords.join(' ');
+    
+         console.log(resultString);
+    }
+
+    checkBadWords(userText, badWords);
+}
