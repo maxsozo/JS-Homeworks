@@ -60,3 +60,25 @@
     const dateOfBirth = (age, yearNow) => age ? yearNow - age : alert('Ви не вказали вік або скасували введення');
     console.log(dateOfBirth(18, 2024));
 }
+
+{
+        function verification(correctLogin, correctPassword) {
+            let userLogin = prompt('Введіть логін');
+            let userPassword
+            if(correctLogin === userLogin) {
+                userPassword = prompt('Введіть пароль');        
+            }
+            else{
+                alert('логін не вірний');
+            }
+
+            if(correctPassword === userPassword) {
+                alert('Ласкаво просимо');
+            }
+            else{
+                alert('пароль не вірний')
+            }
+        }
+
+        verification('admin', 'qwerty');
+}
