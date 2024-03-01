@@ -82,3 +82,27 @@
 
         verification('admin', 'qwerty');
 }
+
+{
+    function tableArr(arrayOfArrays) {
+        let str = "<table border 1px>";
+    for (const array of arrayOfArrays) {
+        str += "<tr>";
+
+        for (const cell of array) {
+            str += `<td>${cell}</td>`;
+        }
+        str += "</tr>";
+    }
+                    
+    str += "</table>";
+    document.write(str);
+    }
+    const multiTable = [[[0], [0], [0], [0], [0], [0]],
+                        [[0], [1], [2], [3], [4], [5]], 
+                        [[0], [2], [4], [6], [8], [10]], 
+                        [[0], [3], [6], [9], [12], [15]], 
+                        [[0], [4], [8], [12], [16], [20]], 
+                        [[0], [5], [10], [15], [20], [25]]];
+    tableArr(multiTable);
+}
