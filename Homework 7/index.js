@@ -55,3 +55,8 @@
     }
     console.log(newLineString('hello my name is \nMaks\n;)'))
 }
+
+{
+    const dateOfBirth = (age, yearNow) => age ? yearNow - age : alert('Ви не вказали вік або скасували введення');
+    console.log(dateOfBirth(18, 2024));
+}
