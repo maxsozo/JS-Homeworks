@@ -120,3 +120,26 @@
 
     checkBadWords(userText, badWords);
 }
+
+{
+    function createForum(obj) {
+        let str = "<form>";
+  
+        for(const keys in obj){
+            str += `<label> ${keys}: <input type="${(typeof obj[keys] === 'number') ? 'number' : (typeof obj[keys] === 'string') ? 'text' : 'checkbox' }" value="${obj[keys]}"/></label>`
+        }
+    
+        str += "</form>";
+        document.write(str);
+    }
+    const car = {
+        "Name":"chevrolet chevelle malibu",
+        "Cylinders":8,
+        "Displacement":307,
+        "Horsepower":130,
+        "Weight_in_lbs":3504,
+        "Origin":"USA",
+        "in_production": false
+    }
+    createForum(car);
+}
