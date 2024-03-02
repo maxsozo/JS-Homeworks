@@ -143,3 +143,29 @@
     }
     createForum(car);
 }
+
+{
+    function sort(arr, key, boolean = true) {
+        
+        arr.sort(function (a, b) {
+            if (a[key] > b[key]) {
+                return boolean ? 1 : -1;
+            }
+            if (a[key] < b[key]) {
+                return boolean ? -1 : 1;
+            }
+            return 0;
+        });
+    }
+
+    let persons = [
+        {name: "Іван", age: 17},
+        {name: "Марія", age: 35},
+        {name: "Олексій", age: 73},
+        {name: "Яків", age: 12},
+    ]
+    
+   sort(persons, "age");
+   
+   sort(persons, "name", false);
+}
