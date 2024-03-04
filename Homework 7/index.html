@@ -20,5 +20,29 @@
     
     firstNumber.oninput = secondNumber.oninput = calcResult
     </script>
+
+    <input type='number' id="weight" placeholder="Ваша вага"/>
+    <input type='number' id="heightInSm" placeholder="Ваш ріст"/>
+    <div id="divisionResult">
+    </div>
+    <script>
+        const bodyWeightCheck = () => {
+            let = heightInM = heightInSm.value / 100;
+            let sum = weight.value / (heightInM * heightInM);
+            if (sum <= 18.5){
+            return divisionResult.innerHTML = 'Давай набирай вес дрищ!';
+            }
+            else if (sum <= 25) {
+                return divisionResult.innerHTML = 'Красавчик!';
+            }
+            else {
+                return divisionResult.innerHTML = 'Роби кардіо жирна жопа!';
+            }
+    }
+
+        
+        
+        weight.oninput = heightInSm.oninput = bodyWeightCheck
+    </script>
 </body>
 </html>
