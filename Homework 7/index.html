@@ -7,6 +7,18 @@
 </head>
 <body>
     <body id="bg"></body>
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <input type='number' id="firstNumber" />
+    <input type='number' id="secondNumber" />
+    <div id="divisionResult">
+    </div>
+    <script>
+    const calcResult = () => {
+        console.log(firstNumber.value, secondNumber.value, divisionResult.innerHTML)
+        divisionResult.innerHTML = Math.floor(firstNumber.value / secondNumber.value);
+    }
+    
+    firstNumber.oninput = secondNumber.oninput = calcResult
+    </script>
 </body>
 </html>
