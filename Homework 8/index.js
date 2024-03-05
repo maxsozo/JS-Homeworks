@@ -43,3 +43,26 @@ let a = 10
 // a буде 100, b undefined і с undefined d undefined
 console.log(a);
 }
+
+{
+    let age = +prompt("Скільки вам років?", "");
+
+    if (age <= 0) {
+        alert("Негативний вік? Це як?");
+    }
+    else if (age < 18) {
+        alert("школяр");
+    }
+    else if (age < 30) {
+        alert("молодь");
+    }
+    else if (age < 45) {
+        alert("зрілість");
+    }
+    else if (age < 60) {
+        alert("захід сонця");
+    }
+    else {
+        alert("чи кіборг, чи KERNESS");
+    }
+}
