@@ -66,3 +66,41 @@ console.log(a);
         alert("чи кіборг, чи KERNESS");
     }
 }
+
+{
+    let sizeInSm = +prompt('Введіть обхват талії в (см)');
+    switch(true){
+        case sizeInSm < 89:
+            alert('Ваш розмір нижчий за XXS');
+            break;
+        case sizeInSm >= 89 && sizeInSm <= 92:
+            alert('XXS');
+            break;
+        case sizeInSm >= 93 && sizeInSm <= 96:
+            alert('XS');
+            break;
+        case sizeInSm >= 97 && sizeInSm <= 101:
+            alert('S');
+            break;
+        case sizeInSm >= 102 && sizeInSm <= 104:
+            alert('M');
+            break;
+        case sizeInSm >= 105 && sizeInSm <= 108:
+            alert('L');
+            break;
+        case sizeInSm >= 109 && sizeInSm <= 112:
+            alert('XL');
+            break;
+        case sizeInSm >= 113 && sizeInSm <= 117:
+            alert('XXL');
+            break;
+        case sizeInSm >= 118 && sizeInSm <= 122:
+            alert('XXXL');
+            break;
+        case sizeInSm > 122:
+            alert('Ну ти і танк');
+            break;
+        default:
+            alert('Ви ввели не чисоло');
+    }
+}
