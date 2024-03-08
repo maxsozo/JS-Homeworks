@@ -132,8 +132,6 @@ console.log(a);
         return choseFunc();
     }
     
-    
-    
     const drink = prompt("Що ви любите пити");
     noSwitch(drink, {
         воду: () => console.log('Найздоровіший вибір!'),
@@ -148,4 +146,32 @@ console.log(a);
             console.log('шото я не зрозумів')
         }
     })
+}
+
+{
+    fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+     .then(data => {
+            //Ця функція запускається коли дані завантажуються.
+            //Інший код працює РАНШЕ.
+            //тільки тут є змінна data з завантаженими даними
+            console.log(data) // Вивчіть структуру, що отримується з сервера в консолі
+
+            const currencyKeys = Object.keys(data.rates);
+            const currencies = data.rates;
+            const currencyValue = Object.values(data.rates);
+            
+            for (const currency of currencyKeys) {
+                const currencyButton = document.createElement("button");
+                currencyButton.innerText = currency;
+                currencyButton.onclick = () => {
+                const sum = prompt('Введіть суму в доларах');
+                const result = sum * currencies[currency];
+                console.log(currencies[currency]);
+                alert(result);
+                }
+                document.body.appendChild(currencyButton);
+            }
+
+    })
+
 }
