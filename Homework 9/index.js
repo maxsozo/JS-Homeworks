@@ -16,3 +16,16 @@
     }
     console.log(arr);
 }
+
+{
+    let arr = [];
+    let userInput;
+    let index = 0;
+
+    while (userInput = prompt('Що ви хочите поставити у вашу скриньку?')) {
+        arr[index] = userInput;
+        index++;
+    }
+
+    console.log(arr);
+}
