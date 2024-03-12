@@ -29,3 +29,15 @@
 
     console.log(arr);
 }
+
+{
+    let index = 0
+    
+    while(Math.random() < 0.9) {
+        index++
+        if(Math.random() > 0.9) {
+            break
+        }
+    }
+    console.log(index);
+}
