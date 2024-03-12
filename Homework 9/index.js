@@ -41,3 +41,12 @@
     }
     console.log(index);
 }
+
+{
+    let question;
+    
+    while(question = !confirm('Ви любите пиво?')) {
+        //пусто)
+    }
+    alert('Я також)');
+}
