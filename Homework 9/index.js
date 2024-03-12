@@ -1,52 +1,62 @@
-{
-    let question;
+// {
+//     let question;
     
-    while(question = !confirm('Ви любите пиво?')) {
+//     while(question = !confirm('Ви любите пиво?')) {
            
-    }
-    alert('Я також)');
-}
+//     }
+//     alert('Я також)');
+// }
 
-{
-    let arr = [];
-    let userInput;
+// {
+//     let arr = [];
+//     let userInput;
 
-    while(userInput = prompt('Що ви хочите поставити у вашу скриньку?')) {
-        arr.push(userInput);
-    }
-    console.log(arr);
-}
+//     while(userInput = prompt('Що ви хочите поставити у вашу скриньку?')) {
+//         arr.push(userInput);
+//     }
+//     console.log(arr);
+// }
 
-{
-    let arr = [];
-    let userInput;
-    let index = 0;
+// {
+//     let arr = [];
+//     let userInput;
+//     let index = 0;
 
-    while (userInput = prompt('Що ви хочите поставити у вашу скриньку?')) {
-        arr[index] = userInput;
-        index++;
-    }
+//     while (userInput = prompt('Що ви хочите поставити у вашу скриньку?')) {
+//         arr[index] = userInput;
+//         index++;
+//     }
 
-    console.log(arr);
-}
+//     console.log(arr);
+// }
 
-{
-    let index = 0
+// {
+//     let index = 0
     
-    while(Math.random() < 0.9) {
-        index++
-        if(Math.random() > 0.9) {
-            break
-        }
-    }
-    console.log(index);
-}
+//     while(Math.random() < 0.9) {
+//         index++
+//         if(Math.random() > 0.9) {
+//             break
+//         }
+//     }
+//     console.log(index);
+// }
+
+// {
+//     let question;
+    
+//     while(question = !confirm('Ви любите пиво?')) {
+//         //пусто)
+//     }
+//     alert('Я також)');
+// }
 
 {
-    let question;
+    let index = +prompt('Напишіть число для арифметичної прогресії та крок');
+    let progression = [1];
     
-    while(question = !confirm('Ви любите пиво?')) {
-        //пусто)
+    for(let i = 1; i < index; i++) {
+        progression.push(progression[i - 1] + index);
     }
-    alert('Я також)');
+    console.log(progression);
 }
