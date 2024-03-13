@@ -110,3 +110,13 @@
     }
     console.log(str);
 }
+
+{
+    let index = +prompt('Напишіть число для прогресії ступеня');
+    let progression = [0];
+    
+    for(let i = 1; i < index; i++) {
+        progression.push(Math.pow(i, index))
+    }
+    console.log(progression);
+}
