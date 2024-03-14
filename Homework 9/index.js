@@ -131,3 +131,18 @@
     }
     console.log(arr);
 }
+
+{   
+    
+    function readArrayOfObjects() {
+        let question;
+        let arr = {};
+        while(question= confirm('бажаєте продовжити?')) {
+            let userInputKey = prompt('Введіть ключ до обєкта');
+            let userInputValue = prompt('Введіть значення до ключа');
+            arr[userInputKey] = userInputValue;
+        }
+        console.log(arr);
+    }
+    readArrayOfObjects()
+}
