@@ -138,11 +138,36 @@
         let question;
         let arr = {};
         while(question= confirm('бажаєте продовжити?')) {
-            let userInputKey = prompt('Введіть ключ до обєкта');
-            let userInputValue = prompt('Введіть значення до ключа');
+            const userInputKey = prompt('Введіть ключ до обєкта');
+            const userInputValue = prompt('Введіть значення до ключа');
             arr[userInputKey] = userInputValue;
         }
         console.log(arr);
     }
     readArrayOfObjects()
+}
+
+{
+    let size = +prompt('Введіть розмір ромба');  
+    let center = Math.floor(size / 2);
+
+    for (let i = 0; i < size; i++) {
+        let str = '';
+        let dots = Math.abs(center - i);
+        let hashes = size - 2 * dots;
+
+        for (let j = 0; j < dots; j++) {
+            str += '.';
+        }
+
+        for (let k = 0; k < hashes; k++) {
+            str += '#';
+        }
+
+        for(let l = 0; l < dots; l++) {
+            str += '.';
+        }
+
+        console.log(str);
+    }
 }
