@@ -171,3 +171,29 @@
         console.log(str);
     }
 }
+
+{   
+    const table = document.createElement("table");
+    document.body.appendChild(table);
+    table.style.border = '1px solid black';
+    let arr = [];
+    for(let i = 1; i < 10; i++) {
+        const tr = document.createElement('tr');
+        table.appendChild(tr);
+        tr.innerText = arr;
+        for(let j = 1; j < 10; j++) {
+            const td = document.createElement('td');
+            td.style.border = '1px solid black';
+            td.innerText = i * j;
+            tr.appendChild(td);
+
+            td.addEventListener('mouseover', function() {
+                td.style.backgroundColor = 'red';
+            });
+            
+            td.addEventListener('mouseout', function() {
+                td.style.backgroundColor = ''; 
+            });
+        }
+    }
+}
