@@ -222,4 +222,33 @@ console.log(a);
             }
 
         })
-}   
+}
+
+{
+    fetch('https://raw.githubusercontent.com/russ666/all-countries-and-cities-json/master/countries.min.json').then(res => res.json())
+     .then(data => {
+            //Ця функція запускається коли дані завантажуються.
+             //Інший код працює РАНШЕ.
+             console.log(data) // Вивчіть структуру, що отримується з сервера в консолі
+    
+            const countries = Object.keys(data);
+            const response = data;
+
+            for (const country of countries) {
+                const countryOption = document.createElement("option");
+                countryOption.innerText = country;
+                countriesId.appendChild(countryOption);
+            }
+
+            countriesId.onchange = () => {
+                const selectedCountry = countriesId.value;
+                citiesId.innerHTML = '';
+                for (const city of response[selectedCountry]) {
+                    const cityOption = document.createElement("option");
+                    cityOption.innerText = city;
+                    citiesId.appendChild(cityOption);
+                }
+            }
+           
+    })
+}
