@@ -171,6 +171,9 @@
 
 {
     function isSorted (...args) {
+        if(!args.length) {
+            return false;
+        }
         const isEveryNumber = args.every((element) => !isNaN(element));
         if(!isEveryNumber) {
             return false;
@@ -183,7 +186,15 @@
         }
         return true;
     }
-    console.log(isSorted(12, 34, 233));
-    console.log(isSorted('sfdd', 'xyu', 'pizda'));
-    console.log(isSorted(12, 11, 10));
+
+    let arr = [];
+    let userInput;
+
+    while(userInput = prompt('Що ви хочите поставити у вашу скриньку?')) {
+        if(!isNaN(userInput)) {
+            arr.push(+userInput);
+        }
+        
+    }
+    console.log(isSorted(...arr));
 }
