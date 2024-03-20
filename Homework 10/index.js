@@ -168,3 +168,22 @@
         console.log(b.getSurname());
 
 }
+
+{
+    function isSorted (...args) {
+        const isEveryNumber = args.every((element) => !isNaN(element));
+        if(!isEveryNumber) {
+            return false;
+        }
+        for(let i = 0; i < args.length - 1; i++){
+
+            if((args[i] > args[i+1]))
+                return false;
+
+        }
+        return true;
+    }
+    console.log(isSorted(12, 34, 233));
+    console.log(isSorted('sfdd', 'xyu', 'pizda'));
+    console.log(isSorted(12, 11, 10));
+}
