@@ -338,3 +338,63 @@
     
     personForm(parentElement, b);
 }
+
+{
+        function getSetForm(parent, getSet) {
+            const inputs = {};
+
+            const updateInputs = () => {
+                for (const fieldName in inputs) {
+                    const getKey = "get" + fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
+                    if (getSet.hasOwnProperty(getKey)) {
+                        inputs[fieldName].value = getSet[getKey]();
+                    }
+                }
+            };
+        
+            for (const getSetName in getSet) {
+            const getOrSet = typeof getSet[getSetName] === 'function' ? 'get' : 'set';
+            const fieldName = getSetName.replace(/^(get|set)/, ''); 
+                if (getOrSet === "get") {
+                    const input = document.createElement('input');
+                    input.setAttribute('type', 'text');
+                    input.placeholder = fieldName;
+                    parent.appendChild(input);
+                    inputs[fieldName.toLowerCase()] = input;
+        
+                    input.addEventListener('input', () => {
+                        const setKey = "set" + fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
+                        if (getSet.hasOwnProperty(setKey)) {
+                            getSet[setKey](input.value);
+                            updateInputs();
+                        }
+                    });
+                }
+            }
+            
+            updateInputs();
+        }
+
+        let car = {
+            getBrand() {
+                return "BMW";
+            },
+            setBrand(newBrand) {
+                console.log("Setting brand to", newBrand);
+            },
+            getModel() {
+                return "X5";
+            },
+            setModel(newModel) {
+                console.log("Setting model to", newModel);
+            },
+            getVolume() {
+                return 2.4;
+            },
+            setVolume(newVolume) {
+                console.log("Setting volume to", newVolume);
+            }
+        };
+        
+        getSetForm(document.body, car);
+}   
