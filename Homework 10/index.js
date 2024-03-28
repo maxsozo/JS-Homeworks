@@ -215,17 +215,21 @@
         let fatherName = '';
         let age = 0;
     
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    
         return {
             getName: function() {
-                return name;
+                return capitalize(name);
             },
     
             getSurname: function() {
-                return surname;
+                return capitalize(surname);
             },
     
             getFatherName: function() {
-                return fatherName;
+                return capitalize(fatherName);
             },
     
             getAge: function() {
@@ -233,25 +237,25 @@
             },
     
             getFullName: function() {
+                let full = `${capitalize(name)} ${capitalize(surname)}`;
                 if (fatherName) {
-                    return `${capitalize(name)} ${capitalize(fatherName)} ${capitalize(surname)}`;
-                } else {
-                    return `${capitalize(name)} ${capitalize(surname)}`;
+                    full += ` ${capitalize(fatherName)}`;
                 }
+                return full;
             },
     
             setName: function(newName) {
-                name = newName;
+                name = capitalize(newName);
                 return name;
             },
     
             setSurname: function(newSurname) {
-                surname = newSurname;
+                surname = capitalize(newSurname);
                 return surname;
             },
     
             setFatherName: function(newFatherName) {
-                fatherName = newFatherName;
+                fatherName = capitalize(newFatherName);
                 return fatherName;
             },
     
@@ -266,13 +270,13 @@
                 const parts = newFullName.split(' ');
                 const length = parts.length;
                 if (length >= 1) {
-                    surname = parts[length - 1] || '';
+                    surname = capitalize(parts[length - 1]) || '';
                 }
                 if (length >= 2) {
-                    name = parts.slice(0, length - 1).join(' ') || '';
+                    name = capitalize(parts[0]) || '';
                 }
                 if (length >= 3) {
-                    fatherName = parts[length - 2] || '';
+                    fatherName = capitalize(parts[length - 2]) || '';
                 }
                 return this.getFullName();
             }
@@ -336,8 +340,8 @@
             const parts = updatedFullName.split(' ');
             if (parts.length === 3) {
                 nameInput.value = parts[0];
-                surnameInput.value = parts[2];
-                fatherNameInput.value = parts[1];
+                surnameInput.value = parts[1];
+                fatherNameInput.value = parts[2];
             }
         });
     }
