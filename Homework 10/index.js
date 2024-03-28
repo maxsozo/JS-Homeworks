@@ -32,72 +32,80 @@
         let fatherName = '';
         let age = 0;
 
+        function capitalize(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+
         return {
-            getName: function () {
-                return name;
+            getName: function() {
+                return capitalize(name);
             },
 
-            getSurname: function () {
-                return surname;
+            getSurname: function() {
+                return capitalize(surname);
             },
 
-            getFatherName: function () {
-                return fatherName;
+            getFatherName: function() {
+                return capitalize(fatherName);
             },
 
-            getAge: function () {
+            getAge: function() {
                 return age;
             },
 
-            getFullName: function () {
+            getFullName: function() {
+                let full = `${capitalize(name)} ${capitalize(surname)}`;
                 if (fatherName) {
-                    return `${name} ${fatherName} ${surname}`;
-                } else {
-                    return `${name} ${surname}`;
-                }   
+                    full += ` ${capitalize(fatherName)}`;
+                }
+                return full;
             },
 
-            setName: function (newName) {
-                name = newName;
+            setName: function(newName) {
+                name = capitalize(newName);
+                return name;
             },
 
-            setSurname: function (newSurname) {
-                surname = newSurname;
+            setSurname: function(newSurname) {
+                surname = capitalize(newSurname);
+                return surname;
             },
 
-            setFatherName: function (newFatherName) {
-                fatherName = newFatherName;
+            setFatherName: function(newFatherName) {
+                fatherName = capitalize(newFatherName);
+                return fatherName;
             },
 
-            setAge: function (newAge) {
+            setAge: function(newAge) {
                 if (typeof newAge === 'number' && newAge >= 0 && newAge <= 100) {
                     age = newAge;
                 }
+                return age;
             },
 
             setFullName: function(fullName) {
                 const parts = fullName.split(' ');
                 const length = parts.length;
                 if (length >= 1) {
-                    surname = parts[length - 3] || 'Анонімович';
+                    surname = capitalize(parts[length - 1]) || 'Анонімович';
                 }
                 if (length >= 2) {
-                    name = parts.slice(0, length - 2).join(' ') || 'Анонім';
+                    name = capitalize(parts.slice(0, length - 1).join(' ')) || 'Анонім';
                 }
                 if (length >= 3) {
-                    fatherName = parts[length - 1] || '';
+                    fatherName = capitalize(parts[length - 2]) || '';
                 }
             }
         }
-        
     }
+
     const a = createPersonClosure("Вася", "Пупкін")
-    const b = createPersonClosure("Ганна", "Іванова") 
+    const b = createPersonClosure("Ганна", "Іванова")
     console.log(a.getName())
     a.setAge(15)
-    a.setAge(150) //не працює
+    console.log(a.setAge(150))
     b.setFullName("Петрова Ганна Миколаївна")
-    console.log(b.getFatherName()) //Миколаївна
+    console.log(b.getFatherName())
 }
 
 {
@@ -200,73 +208,77 @@
 }
 
 {   
-    function createPersonClosure (name, surname) {
-        
+    function createPersonClosure(name, surname) {
+
         let fullName = name + ' ' + surname;
         let [firstName, lastName] = fullName.split(' ');
         let fatherName = '';
         let age = 0;
-
+    
         return {
-            getName: function () {
+            getName: function() {
                 return name;
             },
-
-            getSurname: function () {
+    
+            getSurname: function() {
                 return surname;
             },
-
-            getFatherName: function () {
+    
+            getFatherName: function() {
                 return fatherName;
             },
-
-            getAge: function () {
+    
+            getAge: function() {
                 return age;
             },
-
-            getFullName: function () {
+    
+            getFullName: function() {
                 if (fatherName) {
-                    return `${name} ${fatherName} ${surname}`;
+                    return `${capitalize(name)} ${capitalize(fatherName)} ${capitalize(surname)}`;
                 } else {
-                    return `${name} ${surname}`;
-                }   
+                    return `${capitalize(name)} ${capitalize(surname)}`;
+                }
             },
-
-            setName: function (newName) {
+    
+            setName: function(newName) {
                 name = newName;
+                return name;
             },
-
-            setSurname: function (newSurname) {
+    
+            setSurname: function(newSurname) {
                 surname = newSurname;
+                return surname;
             },
-
-            setFatherName: function (newFatherName) {
+    
+            setFatherName: function(newFatherName) {
                 fatherName = newFatherName;
+                return fatherName;
             },
-
-            setAge: function (newAge) {
+    
+            setAge: function(newAge) {
                 if (typeof newAge === 'number' && newAge >= 0 && newAge <= 100) {
                     age = newAge;
                 }
+                return age;
             },
-
-            setFullName: function(fullName) {
-                const parts = fullName.split(' ');
+    
+            setFullName: function(newFullName) {
+                const parts = newFullName.split(' ');
                 const length = parts.length;
                 if (length >= 1) {
-                    surname = parts[length - 3] || '';
+                    surname = parts[length - 1] || '';
                 }
                 if (length >= 2) {
-                    name = parts.slice(0, length - 2).join(' ') || '';
+                    name = parts.slice(0, length - 1).join(' ') || '';
                 }
                 if (length >= 3) {
-                    fatherName = parts[length - 1] || '';
+                    fatherName = parts[length - 2] || '';
                 }
+                return this.getFullName();
             }
         }
-        
     }
-
+    
     function personForm(parent, person) {
         const nameInput = document.createElement('input');
         nameInput.setAttribute('type', 'text');
@@ -318,13 +330,14 @@
         });
     
         fullNameInput.addEventListener('input', () => {
-            person.setFullName(fullNameInput.value);
-            fullNameInput.value = person.getFullName();
-            const parts = fullNameInput.value.split(' ');
+            const newFullName = fullNameInput.value;
+            const updatedFullName = person.setFullName(newFullName);
+            fullNameInput.value = updatedFullName;
+            const parts = updatedFullName.split(' ');
             if (parts.length === 3) {
                 nameInput.value = parts[0];
-                surnameInput.value = parts[1];
-                fatherNameInput.value = parts[2];
+                surnameInput.value = parts[2];
+                fatherNameInput.value = parts[1];
             }
         });
     }
