@@ -156,3 +156,64 @@
       const unsubscribe = store.subscribe(displayKioskState);
       displayKioskState();
 }
+
+{
+    function Password(parent, open) {
+        const input = document.createElement("input");
+        input.type = open ? "text" : "password";
+        parent.appendChild(input);
+    
+        const checkBox = document.createElement("button");
+        checkBox.textContent = open ? "сховати пароль" : "показати пароль";
+        parent.appendChild(checkBox);
+    
+        input.addEventListener("input", () => {
+            if (typeof this.onChange === "function") {
+                this.onChange(input.value);
+            }
+        });
+    
+        checkBox.addEventListener("click", () => {
+            open = !open;
+            input.type = open ? "text" : "password";
+            checkBox.textContent = open ? "сховати пароль" : "показати пароль";
+    
+            if (typeof this.onOpenChange === "function") {
+                this.onOpenChange(open);
+            }
+        });
+    
+        this.setValue = function(value) {
+            input.value = value;
+        };
+    
+        this.getValue = function() {
+            return input.value;
+        };
+    
+        this.setOpen = function(newState) {
+            open = newState;
+            input.type = open ? "text" : "password";
+            checkBox.textContent = open ? "сховати пароль" : "показати пароль";
+    
+            if (typeof this.onOpenChange === "function") {
+                this.onOpenChange(open);
+            }
+        };
+    
+        this.getOpen = function() {
+            return open;
+        };
+    }
+
+    let p = new Password(document.body, true);
+    
+    p.onChange = data => console.log(data);
+    p.onOpenChange = open => console.log(open); 
+    
+    p.setValue('qwerty');
+    console.log(p.getValue());
+    
+    p.setOpen(false);
+    console.log(p.getOpen());
+}
