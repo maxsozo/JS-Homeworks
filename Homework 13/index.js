@@ -236,3 +236,121 @@
       console.log("Password:", password);
   });
 }
+
+{
+    
+function LoginForm(parent) {
+  const form = document.createElement("form");
+  parent.appendChild(form);
+
+  this.usernameInput = new Password(form, false, 'user name');
+  this.passwordInput = new Password(form, false, 'password');
+
+  const submitButton = document.createElement("button");
+  submitButton.textContent = "Submit";
+  form.appendChild(submitButton);
+
+  let onChangeCallback = null;
+
+  const checkInputs = () => {
+      const username = this.usernameInput.getValue();
+      const password = this.passwordInput.getValue();
+      submitButton.disabled = !(username && password);
+      if (onChangeCallback) {
+          onChangeCallback(username, password);
+      }
+  };
+
+  this.usernameInput.onChange = checkInputs;
+  this.passwordInput.onChange = checkInputs;
+
+  checkInputs();
+
+  this.setSubmitCallback = function(callback) {
+      onChangeCallback = callback;
+  };
+
+  this.getUsername = function() {
+      return this.usernameInput.getValue();
+  };
+
+  this.getPassword = function() {
+      return this.passwordInput.getValue();
+  };
+
+  form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      if (onChangeCallback) {
+          onChangeCallback(this.usernameInput.getValue(), this.passwordInput.getValue());
+      }
+  }.bind(this));
+}
+
+function Password(parent, open, placeholder) {
+  const input = document.createElement("input");
+  input.placeholder = placeholder;
+  input.type = open ? "text" : "password";
+  parent.appendChild(input);
+
+  const toggleButton = document.createElement("button");
+  toggleButton.textContent = open ? `сховати ${placeholder}` : `показати ${placeholder}`;
+  parent.appendChild(toggleButton);
+
+  let onOpenChangeCallback = null;
+
+  input.addEventListener("input", () => {
+      if (typeof this.onChange === "function") {
+          this.onChange(input.value);
+      }
+  });
+
+  toggleButton.addEventListener("click", () => {
+      open = !open;
+      input.type = open ? "text" : "password";
+      
+      toggleButton.textContent = open ? `сховати  ${placeholder}` : `показати ${placeholder}`;
+
+      if (typeof this.onOpenChange === "function") {
+          this.onOpenChange(open);
+      }
+      if (onOpenChangeCallback) {
+          onOpenChangeCallback(open);
+      }
+  });
+
+  this.setValue = function(value) {
+      input.value = value;
+  };
+
+  this.getValue = function() {
+      return input.value;
+  };
+
+  this.setOpen = function(newState) {
+      open = newState;
+      input.type = open ? "text" : "password";
+      toggleButton.textContent = open ? "сховати" : "показати";
+
+      if (typeof this.onOpenChange === "function") {
+          this.onOpenChange(open);
+      }
+      if (onOpenChangeCallback) {
+          onOpenChangeCallback(open);
+      }
+  };
+
+  this.getOpen = function() {
+      return open;
+  };
+
+  this.setOnOpenChange = function(callback) {
+      onOpenChangeCallback = callback;
+  };
+
+  this.getInput = function() {
+      return input;
+  };
+}
+
+const loginForm = new LoginForm(document.body);
+}
