@@ -254,3 +254,31 @@ document.write(htmlString);
     console.log(jsonString2 === JSON.stringify(table)) //повинно бути true 
 
 }
+
+{
+    function getElementById(idToFind) {
+        function walker(parent) {
+            if (parent.id === idToFind) {
+                throw parent;
+            }
+            if (parent.children) {
+                for (let i = 0; i < parent.children.length; i++) {
+                    walker(parent.children[i]);
+                }
+            }
+        }
+    
+        try {
+            walker(document.body);
+        } catch (element) {
+            return element;
+        }
+    
+        return null;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const foundElement = getElementById('test');
+        console.log(foundElement); 
+    });
+}
