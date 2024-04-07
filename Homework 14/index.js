@@ -184,3 +184,73 @@ document.write(htmlString);
     const table2 = deepCopy(table) // Аналогічно
     console.log(table2);
 }
+
+{
+    function stringify(obj) {
+        if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null) {
+            return String(obj);
+        }
+        if (typeof obj === 'string') {
+            return `"${obj}"`;
+        }
+        if (typeof obj === 'undefined') {
+            return 'null';
+        }
+        if (Array.isArray(obj)) {
+            const arrStr = obj.map(item => stringify(item)).join(',');
+            return `[${arrStr}]`;
+        }
+        if (typeof obj === 'object') {
+            const objStr = Object.entries(obj)
+                .map(([key, value]) => `"${key}":${stringify(value)}`)
+                .join(',');
+            return `{${objStr}}`;
+        }
+    }
+        
+
+    const table = {
+        tagName: 'table',
+        attrs: {
+            border: "1",
+        },
+        children: [
+            {
+                tagName: 'tr',
+                children: [
+                    {
+                        tagName: "td",
+                        children: ["1x1"],
+                    },
+                    {
+                        tagName: "td",
+                        children: ["1x2"],
+                    },
+                ]
+            },
+            {
+                tagName: 'tr',
+                children: [
+                    {
+                        tagName: "td",
+                        children: ["2x1"],
+                    },
+                    {
+                        tagName: "td",
+                        children: ["2x2"],
+                    },
+                ]
+            }
+        ]
+    }
+
+    const arr  = [1,"string", null, undefined, {a: 15, b: 10, c: [1,2,3,4],d: undefined, e: true }, true, false]
+    const jsonString = stringify(arr) //Напишіть функцію stringify без використання JSON.stringify
+    console.log(stringify(arr));
+    const jsonString2 = stringify(table) //Напишіть функцію stringify без використання JSON.stringify
+    console.log(JSON.parse(jsonString)) //не повинно поламатися і повернути структуру, у всьому схожу з оригінальним arr або table
+    console.log(jsonString);
+    console.log(jsonString === JSON.stringify(arr)) //повинно бути true
+    console.log(jsonString2 === JSON.stringify(table)) //повинно бути true 
+
+}
