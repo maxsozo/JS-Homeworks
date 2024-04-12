@@ -191,7 +191,7 @@ document.write(htmlString);
             return String(obj);
         }
         if (typeof obj === 'string') {
-            return `"${obj}"`;
+            return `"${obj}"`;  
         }
         if (typeof obj === 'undefined') {
             return 'null';
