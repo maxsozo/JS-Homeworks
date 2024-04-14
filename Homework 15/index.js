@@ -71,3 +71,21 @@
         createTable('table', luke);
     });
 }
+
+{
+    function delay(ms) {
+        return new Promise((fulfill, reject) => {
+            setTimeout(() => fulfill(`Delay for delay: ${ms} ms`), ms);
+        });
+    }
+    
+    function fetchFromAPI() {
+        return fetch('https://swapi.dev/api/people/1/')
+            .then(response => response.json())
+            .then(data => `Data from API: ${data.name}`);
+    };
+    
+    Promise.race([delay(120), fetchFromAPI()])
+        .then(result => console.log(result))
+        .catch(error => console.error(error , 'Щось сє стресло'))
+}
