@@ -106,3 +106,20 @@
     confirmPromise('Проміси це складно?').then(() => console.log('не так вже й складно'),
                                             () => console.log('respect за посидючість і уважність'))
 }
+
+{
+    function promptPromise(text) {
+        return new Promise((resolve , reject) => {
+            const name = prompt(text);
+            if(name) {
+                resolve(name);
+            }
+            else {
+                reject('Cancel');
+            }
+        });
+    }
+    
+    promptPromise("Як тебе звуть?").then(name => console.log(`Тебе звуть ${name}`),
+                                       () => console.log('Ну навіщо морозитися, нормально ж спілкувалися'))
+}
