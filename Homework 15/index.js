@@ -91,18 +91,6 @@
 }
 
 {
-    function confirmPromise(text){
-        let question = confirm(text);
-        if(question) {
-            
-        }
-    }
-   
-   confirmPromise('Проміси це складно?').then(() => console.log('не так вже й складно'),
-    () => console.log('respect за посидючість і уважність'))
-}
-
-{
     function confirmPromise(text) {
         return new Promise((resolve , reject) => {
             const result = confirm(text);
